@@ -11,7 +11,7 @@ contract Assessment {
     event Withdraw(uint256 amount);
 
 
-    string nickname;
+    string characterName;
 
 
     constructor(uint initBalance) payable {
@@ -63,17 +63,17 @@ contract Assessment {
         emit Withdraw(_withdrawAmount);
     }
 
-    //Function assign the generated nickname to the state variable nickname and charge the user
-    function assignNickname(string memory _char) public {
+    //Function assign the generated character name to the state variable characterName and charge the user
+    function assignCharName(string memory _char) public {
         require(msg.sender == owner, "You are not the owner of this account");        
-        //User is charged for generating a random nickname
+        //User is charged for generating a random character name
         balance -= 1;
-        nickname = _char;
+        characterName = _char;
     }
 
-    //Function to get the generated nickname
-    function getNickname() public view returns(string memory){
-        return nickname;
+    //Function to get the generated character name
+    function getCharaName() public view returns(string memory){
+        return characterName;
     }
 
 }
