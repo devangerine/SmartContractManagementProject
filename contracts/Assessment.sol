@@ -10,10 +10,15 @@ contract Assessment {
     event Deposit(uint256 amount);
     event Withdraw(uint256 amount);
 
+
+    string characterName;
+
+
     constructor(uint initBalance) payable {
         owner = payable(msg.sender);
         balance = initBalance;
     }
+    
 
     function getBalance() public view returns(uint256){
         return balance;
@@ -57,4 +62,18 @@ contract Assessment {
         // emit the event
         emit Withdraw(_withdrawAmount);
     }
+
+    //Function assign the generated character name to the state variable characterName and charge the user
+    function assignCharName(string memory _char) public {
+        require(msg.sender == owner, "You are not the owner of this account");        
+        //User is charged for generating a random character name
+        balance -= 1;
+        characterName = _char;
+    }
+
+    //Function to get the generated character name
+    function getCharaName() public view returns(string memory){
+        return characterName;
+    }
+
 }
