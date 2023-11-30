@@ -9,6 +9,7 @@ export default function HomePage() {
   const [balance, setBalance] = useState(undefined);
   const [characterName, setCharName] = useState(undefined);
 
+  //Pool of character names for the gacha
   let characterList = ["Marian", "Rapi", "Anis", "Neon", "Scarlet"];
   let inventoryList = new Array();
 
