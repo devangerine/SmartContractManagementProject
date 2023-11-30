@@ -7,6 +7,10 @@ export default function HomePage() {
   const [account, setAccount] = useState(undefined);
   const [atm, setATM] = useState(undefined);
   const [balance, setBalance] = useState(undefined);
+  const [characterName, setCharName] = useState(undefined);
+
+  let characterList = ["Marian", "Rapi", "Anis", "Neon", "Scarlet"];
+  let inventoryList = new Array();
 
   const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
   const atmABI = atm_abi.abi;
@@ -74,6 +78,55 @@ export default function HomePage() {
       getBalance();
     }
   }
+  
+  /*Calls the function getCharaName from the contract to get updated character name from the contract
+    Calls the function getBalance from this javascript file to update the balance in the page*/
+    const getCharName = async() => {
+      if (atm) {
+       setCharName((await atm.getCharaName()));
+      }
+      getBalance();
+    }
+
+  //Generates a random character name from a pool of character names
+  const gacha = async() => {
+    if(balance != 0){
+      let x = Math.floor(Math.random() * 5);
+      let charName = "";
+
+      switch(x){
+      
+        case 0:
+          //Marian
+          charName = characterList[0];
+          break;
+        case 1:
+          //Rapi
+          charName = characterList[1];
+          break;
+        case 2:
+          //Anis
+          charName = characterList[2];
+          break;
+        case 3:
+          //Neon
+          charName = characterList[3];
+          break;
+        case 4:
+          //Scarlet
+          charName = characterList[4];
+          break;
+        default:
+          break;
+
+      }
+      if (atm) {
+        let tx = await atm.assignCharName(charName);
+        await tx.wait()
+        getCharName();
+      }
+    }
+  }
 
   const initUser = () => {
     // Check to see if user has Metamask
@@ -90,12 +143,18 @@ export default function HomePage() {
       getBalance();
     }
 
+    if (characterName == undefined){
+      getCharName();
+    }
+
     return (
       <div>
+        <p>Your Random Character Name: {characterName}</p>
         <p>Your Account: {account}</p>
         <p>Your Balance: {balance}</p>
         <button onClick={deposit}>Deposit 1 ETH</button>
         <button onClick={withdraw}>Withdraw 1 ETH</button>
+        <button onClick={gacha}>Generate Random Character Name(Costs 1 ETH)</button>
       </div>
     )
   }
@@ -104,7 +163,7 @@ export default function HomePage() {
 
   return (
     <main className="container">
-      <header><h1>Welcome to the Metacrafters ATM!</h1></header>
+      <header><h1>Welcome to Character Name Gacha</h1></header>
       {initUser()}
       <style jsx>{`
         .container {
