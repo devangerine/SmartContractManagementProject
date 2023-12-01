@@ -11,7 +11,16 @@ This program is a contract written in Solidity for the contract and javascript f
 
 ### Executing program
 
-In order to run this program, you will have to clone my repository first. First, go to the root directory of my repository for this project and click the green "<> code" button. You will see a url beside a copy button which looks like to pieces of paper with one on top of the other. Click that copy button to copy the url in its entirety. Next is to open VS Code 
+In order to run this program, you will have to clone my repository first. First open VS Code and then once it is open click the "File" menu button on the top left. A sub menu will appear and from there click "Open Folder...". Select the directory you want to clone the repository into. A warning may appear that asks if you trust the author click on the yes option. Next find the "Terminal" menu button which might be hidden if you cannot see it look for a "..." found in the same row as the "File" menu button. Upon clicking the "..." the "Terminal" menu button will appear as an option. Clicking the "Terminal" menu button and click "New Terminal" on the submenu that opens. This will open a new terminal window around the bottom part of your screen. Inside the terminal window copy and then paste the following command: 
+```git clone https://github.com/devangerine/SmartContractManagementProject.git```
+Press the enter key and it will start cloning the repository into the directory you have opened.
+Next open the root directory of the repository you have cloned.
+Click the "File" menu button on the top left. A sub menu will appear and from there click "Open Folder...". Open the directory where you have cloned the repository and select the root folder "SmartContractManagement" then click the "Select Folder" button. 
+
+Close the terminal window you used to clone the repository and open 3 new ones using the same process mentioned before. You can use the + button found the the first terminal window you created as well to create new terminal windows. 
+
+Go to the first terminal window of the three you just created. You can do this by selecting the top most terminal window found the right side of the current terminal window (In my case they are powershell but yours may vary). In that terminal copy and paste the follow command:
+
 
 
 Copy and then paste the following code into the file you have just created:
