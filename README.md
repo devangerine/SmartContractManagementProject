@@ -42,7 +42,7 @@ This will compile the frontend and where it will exist on a sort of local networ
 Once the command has finished execution, open the front end of the program by going to this url on your browser:
 ```http://localhost:3000/```
 
-Before you can interact with the program you must first setup up your Metemask. Make sure you have the Metamask plugin installed on your browser, registered an account and have logged in. 
+Before you can interact with the program you must first setup up your Metemask. Make sure you have the Metamask plugin installed on your browser, registered an account and have logged in. From here you need to add the local network you have spun up to your Metamask's list of networks. Open Metamask and click on the 3 dots stacked on top of each other foumd on the top right corner of the Metamask window. This will open a submenu. Click "Settings" and you will be tkane to the Settings menu. Inside the Settings menu scroll down to find and click on "Networks". This will show you networks already listed on your Metamask. Click on  the  "Add network" button. This will take you to the Add a network menu. Scroll down and click on "Add a network manually". This will open up a form where will input the details of the network you will add. 
 
 
 
