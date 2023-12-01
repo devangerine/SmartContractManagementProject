@@ -1,33 +1,18 @@
 # SmartContractManagementProject
 
-This is a Solidity program that simulates a creditor loaning of wei to a debtor. The purpose of this program is showcase my current understanding of Solidity as a programming language (the usage of modifiers as well as error handling functions namely: require, assert, and revert) as well as serve as a referrence to those who are studying Solidity like me. 
+This is a Solidity program with a javascript frontend that simulates a gacha machine that accepts ETH as payment. The purpose of this program is showcase my current understanding of Solidity as a programming language (connecting a smart contract to a front end) as well as serve as a referrence to those who are studying Solidity like me. The original code is from MetacrafterChris and here is the link to his repository: https://github.com/MetacrafterChris/SCM-Starter. I simply added some functionalities on top of his work. Please do check out his other projects on his github! 
 
 ## Description
 
-This program is a contract written in Solidity, an object-oriented programming language typically used for developing smart contracts on various blockchain platforms such as ethereum. This contract has you act as a creditor giving a loans to debtors. The debtor pays for a transaction fee in this transaction. 
+This program is a contract written in Solidity for the contract and javascript for the frontend. This contract has you act as a customer using the gacha machine to generate a character name. It allows you to deposite and withdraw into the system as well as generate a random character name provided that you have enough balance. Your balance and character name are updated as changes to them are made using their respective getter and setter functions.
 
-This contract has a modifier called onlyCreditor which only allows the creditor to access the contract's functions. This modifier to applied to all of the functions within this contract. The contract has the following functions: 
-* sendLoan - sends a _loanAmount of type unsigned integer to a debtor associated with the user-inputted debtorId of type unsigned integer and sets that debtor's debtorOnCooldown status to true preventing that debtor from taking any more loans. 
-* getCreditorBalance - returns the creditor's current balance. 
-* getDebtorBalance - returns the balance of the debtor associated the user-inputted _debtorId of type unsigned integer. 
-* debtorCooldownStatus - returns the cooldown of the debtor associated the user-inputted _debtorId of type unsigned integer.
-* resetCooldown - sets the debtorOnCooldown status of the debtor associated with the user-inputted debtorId of type unsigned integer back to false thus allowing that debtor to take another loan.
-* triggerAssert - increments the transactionFee state variable to trigger the assert statement that assumes it never changes to demonstrate the function of assert.
-* viewTransactionFee - returns the current value of the state variable transactionFee.
-* resetTransactionFee - sets the transactionFee back to its default value of 10.
-
-This contract uses the following error handling functions:
-
-* **require** - prevents any code below it if the conditional statement contained within the require function is not met. It has an optional message parameter to provide further context. Typically used for input validation.
-* **assert** - similar to require it also contains a conditional statement within it but has no mmessage parameter and is typically used for debugging making sure that developer has not written code that changed something within the program that it should not have. If an assert is triggered a revert will occur which reverses any changes done to the state of the contract.
-* **revert** - reverses any changes done to the state of the contract. Typically contained within a conditional statement and if the conditonal statement returns true, the revert statement is triggered. 
 
 ## Getting Started
 
 ### Executing program
 
-In order to run this program, you can use Remix, an online Solidity IDE which I used to develop this contract. For starters, please go to the Remix website at https://remix.ethereum.org/.
-Upon reaching the website, create a new file by clicking the "New File" button around the center of the website or the button that looks like a piece of paper with the top right corner folded found on the top left corner of the website under workspaces. Save the file under the file name of your choice while making sure to use the .sol extension (e.g. ErrorHandling.sol). Copy and then paste the following code into the file you have just created:
+In order to run this program, you will have to clone my repository first. First, go to the root directory of my repository for this project and click the green "<> code" button. 
+Copy and then paste the following code into the file you have just created:
 
 
 ```Solidity
