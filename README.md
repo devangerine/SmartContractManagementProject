@@ -11,7 +11,9 @@ This program is a contract written in Solidity for the contract and javascript f
 
 ### Executing program
 
-In order to run this program, you will have to clone my repository first. First, go to the root directory of my repository for this project and click the green "<> code" button. 
+In order to run this program, you will have to clone my repository first. First, go to the root directory of my repository for this project and click the green "<> code" button. You will see a url beside a copy button which looks like to pieces of paper with one on top of the other. Click that copy button to copy the url in its entirety. Next is to open VS Code 
+
+
 Copy and then paste the following code into the file you have just created:
 
 
