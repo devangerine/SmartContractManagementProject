@@ -62,31 +62,28 @@ Click on the dropwdown on the top left corner of the plugin's window. This will 
 
 In the contract of this project the first account becomes the owner and will be the only account that has access to the functions of the contract. For this reason you will need to add the account to your Metemask pluigin. 
 
-On the second terminal in your VS Code find the details of "Account #0". Copy the private key of "Account 0". From here open the Metamask plugin and click on the drop down found at the top senter that says Account followed by a number. This will open up an account list. 
-Click on "Add account or hardware wallet". This will open the add account submenu. Click "import account" and paste the private key you copied into the input field provided. Click the "Import" button to import the account.
+From here open the Metamask plugin and click on the drop down found at the top senter that says Account followed by a number. This will open up an account list. Click on "Add account or hardware wallet". This will open the add account submenu. Click "import account" and paste this private key ```0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80``` into the input field provided. Click the "Import" button to import the account. Hte private key is of Account 0 which is the first account and the accounts details can be found on the second terminal in your VS Code. 
 
-### Post Contract Deployment
-After the contract has been deployed, the contract will be found under "Deployed Contracts". Expand it by clicking the ">" button below "Deployed Contracts". You should see the following buttons: 
-* sendLoan - sends a _loanAmount of type unsigned integer to a debtor associated with the user-inputted debtorId of type unsigned integer and sets that debtor's debtorOnCooldown status to true preventing that debtor from receiving any more loans. 
-* getCreditorBalance - returns the creditor's current balance. 
-* getDebtorBalance - returns the balance of the debtor associated the user-inputted _debtorId of type unsigned integer. 
-* debtorCooldownStatus - returns the cooldown of the debtor associated the user-inputted _debtorId of type unsigned integer.
-* resetCooldown - sets the debtorOnCooldown status of the debtor associated with the user-inputted _debtorId of type unsigned integer back to false thus allowing that debtor to take another loan.
-* triggerAssert - increments the transactionFee state variable to trigger the assert statement that assumes it never changes to demonstrate the function of assert.
-* viewTransactionFee - returns the current value of the state variable transactionFee.
+Open the Metamask plugin and click on the drop down found at the top senter that says Account followed by a number. Click the the account you have just imported. It should have the 92266 at the end of its public key. 
 
-These buttons correspond to each of the functions within the contract.
-The sendLoan, getDebtorBalance, debtorCooldownStatus, and resetCooldown have input fields beside them.
+Once you have all this setup you should be ready to use the program.
+ 
+### Program Usage
 
 You can interact with contract with the following actions:
 
-#### I - Getting the balance of the creditor
+**Note: It is important that you connect your Metamask wallet first using the instructions below in order to gain access to the rest of the functionality of the program."**
 
-**Steps on getting the balance of the creditor:**
+#### I - Connecting your Metamask wallet to the program.
 
-1.) Find the "getCreditorBalance" button.
+**Steps on connecting your Metamask wallet to the program:**
 
-2.) Click the "getCreditorBalance" button. The current balance of the creditor will be shown below the button.
+1.) Find the "Please connect your Metamask wallet" button.
+
+2.) Click the "Please connect your Metamask wallet" button. This will open up a menu where you will select which wallet you will link to the program.
+
+3.) Click the "Use Metamask button". This will take you to the main screen of the program.
+
 
 #### II - Getting the balance of the debtor
 
