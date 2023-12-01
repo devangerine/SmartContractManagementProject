@@ -85,101 +85,38 @@ You can interact with contract with the following actions:
 3.) Click the "Use Metamask button". This will take you to the main screen of the program.
 
 
-#### II - Getting the balance of the debtor
+#### II - Depositing ETH
 
-Note: getDebtorBalance has the following error handling:
+**Steps on Depositing ETH:**
 
-* A require that the _debtorId parameter be only either equal to 0 or 1 because I limited the number of possible debtors to keep this contract as simple as possible. 
+1.) Find the "Deposit 1 ETH" button.
 
-**Steps on getting the balance of the debtor:**
+2.) Click the "Deposit 1 ETH" button. This will open up the Metamask plugin which will be requesting you to confirm the transaction. 
 
-1.) Find the input field beside the "getDebtorBalance" button.
+3.) Click the "Confirm" button. Your balance in the program will be increase by 1 ETH.
 
-2.) Input a _debtorId in that input field. The _debtorId must only be either a 0 or a 1. (Refer to the error handling list of this function found above.)
+#### III - Withdrawing ETH
 
-3.) Click the "getCreditorBalance" button. The current balance of the creditor will be shown below the button.
+**Steps on Withdrawing ETH:**
 
-#### III - Getting the debtorOnCooldown status of a debtor
+1.) Find the "Withdraw 1 ETH" button.
 
-Note: debtorOnCooldown has the following error handling:
+2.) Click the "Withdraw 1 ETH" button. This will open up the Metamask plugin which will be requesting you to confirm the transaction. 
 
-* A require that the _debtorId parameter be only either equal to 0 or 1 because I limited the number of possible debtors to keep this contract as simple as possible. 
+3.) Click the "Confirm" button. Your balance in the program will be dencrease by 1 ETH.
 
-**Steps on getting the debtorOnCooldown status of a debtor:**
+#### IV - Generating a random character name
 
-1.) Find the input field beside the "debtorOnCooldown" button.
+**Steps on Generating a random character name:**
 
-2.) Input a _debtorId in that input field. The _debtorId must only be either a 0 or a 1. (Refer to the error handling list of this function found above.)
+1.) Find the "Generating a Random Character Name(Costs 1 ETH)" button.
 
-3.) Click the "debtorOnCooldown" button. The current debtorOnCooldown status of the debtor associated with the _debtorId you provided will be displayed below. It will be false if the debtor is not cooldown
-otherwise true if the debtor is on cooldown and cannot take a loan.
+2.) Click the "Generating a Random Character Name(Costs 1 ETH)" button. This will open up the Metamask plugin which will be requesting you to confirm the transaction. 
 
-#### IV - Sending a loan
-Note: sendLoan has the following error handling:
+3.) Click the "Confirm" button. The randomly generated character name will appear beside "Your Random Character Name:" on the page and your balance in the program will be dencrease by 1 ETH as payment for the random character name generation.
 
-* An assertion that the transactionFee(state variable of type unsigned integer) is always 10 because under normal operation of the contract the transactionFee does not get changed but the triggerAssert function exists to increment the transactionFee in order to demonstate how assert works which is to throw an error and revert any changes to the state of the contract done before the assertion is executed. 
 
-* A require that the _debtorId parameter be only either equal to 0 or 1 because I limited the number of possible debtors to keep this contract as simple as possible.  
 
-* A require that the debtorOnCooldown element assocaited with the _debtorId is false which means that the debtor associated with the _debtorId not on loaning cooldown as a result of taking a loan recently.
-
-* A revert that gets triggered when the if statement that checks if the creditor's balance is less then the _loanAmount returns true. 
-
-* A revert that gets triggered when the if statement that checks if the debtor's balance is less than the transactionFee returns true.
-
-**Steps on sending a loan:**
-
-**Note: The _debtorId with the value of 1 has 0 balance and will always trigger the revert within tge condtional statement checking that the debtor's balance is greater than the transactionFee.**
-
-1.) Find the input field beside the "sendLoan" button.
-
-2.) Click the input field beside the "sendLoan" button and input a _loanAmount and a _debtorId seprated by a comma (e.g. 60, 0). The _debtorId must only be either a 0 or a 1.
-
-3.) Click the  the "sendLoan" button to send the _loanAmount to the debtor assocaited with the _debtorId you provided. This will fail if debtor's debtorOnCooldown status is true or both/either the debtor and/or the creditor do not have enough balance for the transaction otherwise the loan will be sent successfully.(Refer to the error handling list of this function found above.) You can verify that the loan was sent by clicking the "getCreditorBalance" button and the "getDebtorBalance" button. Use the _debtorId you used here in "sendLoan" as your input for "getDebtorbalance". After the transaction the debtor assocaited with the _debtorId will be put on coolddown and receive loans unless you reset that cooldown more on that later. 
-
-#### V - Using resetCooldown to reset the debtorOnCooldown status of a debtor
-
-Note: debtorOnCooldownStatus has the following error handling:
-
-* A require that the _debtorId parameter be only either equal to 0 or 1 because I limited the number of possible debtors to keep this contract as simple as possible. 
-
-**Steps on Using resetCooldown to reset the debtorOnCooldown status of a debtor:**
-
-1.) Find the "resetCooldown" button.
-
-2.) Input a _debtorId in that input field. The _debtorId must only be either a 0 or a 1. (Refer to the error handling list of this function found above.)
-
-3.) Click the "resetCooldown" button. The current debtorOnCooldown status of the debtor associated with the _debtorId you provided will be set to false thus allow the debtor to receive a loan. You can verify this change by using the debtorOnCooldown function making sure to input the same _debtorId you inputed in resetCooldown to debtorOnCooldown.
-
-#### VI - Getting the value of the transactionFee using viewTransactionFee
-
-**Steps on getting the value of the transactionFee:**
-
-1.) Find the "viewTransactionFee" button.
-
-2.) Click the "viewTransactionFee" button. The value of the transactionFee will be found below the button. It should display 10 if the triggerAssert function has not been used.
-
-#### VII - Using triggerAssert
-
-The sendLoan function has an assertion that the transactionFee(state variable of type unsigned integer) is always 10 because under normal operation of the contract the transactionFee does not get changed but the triggerAssert function exists to increment the transactionFee in order to demonstate how assert works which is to throw an error and revert any changes to the state of the contract done before the assertion is executed.  
-
-In this case, we will be intentionally triggering it through the use of triggerAssert.
-
-**Steps on getting the value of the transactionFee:**
-
-1.) Find the "triggerAssert" button.
-
-2.) Click the "triggerAssert" button. The value of the transactionFee will be incremented by 1. You can verify the change to the transactionFee variable by clicking the viewTransactionFee button.
-
-3.) Try sending a loan. (Refer to the instructions on how to send a loan found in the IV - Sending a loan section of this readme file.) It should fail and throw an error.
-
-#### VII - Using resetTransactionFee to reset the transactionFee to it's default value of 10
-
-1.) Find the "resetTransactionFee" button.
-
-2.) Click the "triggerAssert" button. The value of the transactionFee will set to it's default value of 10. You can verify the change to the transactionFee variable by clicking the viewTransactionFee button.
-
-3.) Try sending a loan. (Refer to the instructions on how to send a loan found in the IV - Sending a loan section of this readme file.) It should succeed and throw no errors. You can verify this by viewing the balances of the creditor and the debtor you send the loan to by using getCreditorBalance and getDebtorBalance respectively. 
 
 ## Code explanation and Contract usage Video Walkthrough
 Below is the video walkthrough on how to use the contract once you already have it compiled and deployed on the Remix IDE:
