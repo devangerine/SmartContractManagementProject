@@ -42,7 +42,7 @@ This will compile the frontend and where it will exist on a sort of local networ
 Once the command has finished execution, open the front end of the program by going to this url on your browser:
 ```http://localhost:3000/```
 
-Before you can interact with the program you must first setup up your Metemask. Make sure you have the Metamask plugin installed on your browser, registered an account and have logged in. From here you need to add the local network you have spun up to your Metamask's list of networks. Open Metamask and click on the 3 dots stacked on top of each other foumd on the top right corner of the Metamask window. This will open a submenu. Click "Settings" and you will be tkane to the Settings menu. Inside the Settings menu scroll down to find and click on "Networks". This will show you networks already listed on your Metamask. Click on  the  "Add network" button. This will take you to the Add a network menu. Scroll down and click on "Add a network manually". This will open up a form where will input the details of the network you will add. 
+Before you can interact with the program you must first setup up your Metemask. Make sure you have the Metamask plugin installed on your browser, registered an account and have logged in. From here you need to add the local network you have spun up to your Metamask's list of networks. Open Metamask and click on the 3 dots stacked on top of each other foumd on the top right corner of the Metamask window. This will open a submenu. Click "Settings" and you will be taken to the Settings menu. Inside the Settings menu scroll down to find and click on "Networks". This will show you networks already listed on your Metamask. Click on  the  "Add network" button. This will take you to the Add a network menu. Scroll down and click on "Add a network manually". This will open up a form where will input the details of the network you will add. 
 
 For Network name you can call it whatever you like. 
 
@@ -125,17 +125,14 @@ https://www.loom.com/share/dbc9c953cac740ca8d0c87814e7b4933
 
 ## Help
 
-### Compilation failed
-Please check if the code inside the .sol file you created in remix matches the code I provided. If it does not match then please copy the code I provided in its entirety and replace the code in the .sol filed that you created in Remix. If it does match and it still will not compile then please check your internet connection or trying a different browser or updating your current browser. 
+### getBalance() Exception
 
-### Debtor balance did not increase/Creditor balance did not dencrease after sending loan
-Please make sure that the _debtorId you provided in the input field beside the "sendLoan" button matches the address you provided the input field beside the "getDebtorBalance" button. If both matches there may have been another error such as: 
+Please make sure that you are on your Metamask wallet you are using the local network you have added and are using the account you have imported. Another thing you can check is if you have omitted --network localhost form the following comamnd: ```npx hardhat run --network localhost scripts/deploy.js```
+when you executed it. It is important to have the part of the command otherwise you will running on an online version instead of your local version. This is because your balance of 10000 ETH is only valid for your local network.
 
-The transaction itself failed due to either the debtor being on cooldown.
+### Nonce Error/ RPC Error
 
-The creditor does not have enough balance for the transaction.
-
-The debtor does not have enough balance for the transaction.
+Open your Metamask wallet and click on the 3 dots stacked on top of each other foumd on the top right corner of the Metamask window. This will open a submenu. Click "Settings" and you will be taken to the Settings menu. Click on "Advanced". This will take you the Advanced Settings menu where you will click on the "Clear activity tab data" button. This will open a confirmation prompt. Click on the "Clear" button on the prompt to proceed. From here you should be able to use the program again. 
 
 If the above does not help or cover the issue you are having with regards to this Solidity Contract I made then please feel free to reach me at 201812805@fit.edu.ph or voltairedvx@gmail.com and I will try to help you as soon as I can.
 
