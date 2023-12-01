@@ -119,8 +119,8 @@ You can interact with contract with the following actions:
 
 
 ## Code explanation and Contract usage Video Walkthrough
-Below is the video walkthrough on how to use the contract once you already have it compiled and deployed on the Remix IDE:
-https://www.loom.com/share/729d20832a7b4f1c824a6c1f79662c21
+Below is the video walkthrough on how to use the program via the frontend after you finished setting everything up:
+https://www.loom.com/share/dbc9c953cac740ca8d0c87814e7b4933
 
 
 ## Help
