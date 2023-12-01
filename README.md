@@ -44,16 +44,26 @@ Once the command has finished execution, open the front end of the program by go
 
 Before you can interact with the program you must first setup up your Metemask. Make sure you have the Metamask plugin installed on your browser, registered an account and have logged in. From here you need to add the local network you have spun up to your Metamask's list of networks. Open Metamask and click on the 3 dots stacked on top of each other foumd on the top right corner of the Metamask window. This will open a submenu. Click "Settings" and you will be tkane to the Settings menu. Inside the Settings menu scroll down to find and click on "Networks". This will show you networks already listed on your Metamask. Click on  the  "Add network" button. This will take you to the Add a network menu. Scroll down and click on "Add a network manually". This will open up a form where will input the details of the network you will add. 
 
+For Network name you can call it whatever you like. 
 
+For New RPC URL: ```http://127.0.0.1:8545/```
+This can be found on the second terminal in your VS Code.
 
+For Chain ID: ```31337```
 
-### Contract Compilation
-In order to compile the code, click on the "Solidity compiler" tab found in the left-hand sidebar below the button that looks like a magnifying glass. Please make sure the Compiler is set to "0.8.18" (or any other compatible version), and then click on the "Compile ErrorHandling.sol" assuming you named your Solidity contract as such. Otherwise, the button will say "Compile " followed by the name of your Solidity contract. For simplicity's sake I will be referring to the contract you have made as "ErrorHandling.sol" but it will appear on the Remix IDE as how you named the contract.
+For Currency symbol: ```ETH```
 
+Leave Block explorer URL blank.
 
-### Contract Deployment
-After the contract has been compiled, you can now deploy the contract by clicking on the "Deploy & run transactions" tab found in the left-hand sidebar below the "Solidity compiler" tab. Select the "ErrorHandling.sol" contract or as how you have named it. After selecting the contract, click on the "Deploy" button.
+After the details above have been added. Click on the "Save" button. 
 
+Close the tab you used to add the network and then open the Metemask plugin again.
+Click on the dropwdown on the top left corner of the plugin's window. This will open the up the list of networks and from here select the network you have just added. 
+
+In the contract of this project the first account becomes the owner and will be the only account that has access to the functions of the contract. For this reason you will need to add the account to your Metemask pluigin. 
+
+On the second terminal in your VS Code find the details of "Account #0". Copy the private key of "Account 0". From here open the Metamask plugin and click on the drop down found at the top senter that says Account followed by a number. This will open up an account list. 
+Click on "Add account or hardware wallet". This will open the add account submenu. Click "import account" and paste the private key you copied into the input field provided. Click the "Import" button to import the account.
 
 ### Post Contract Deployment
 After the contract has been deployed, the contract will be found under "Deployed Contracts". Expand it by clicking the ">" button below "Deployed Contracts". You should see the following buttons: 
